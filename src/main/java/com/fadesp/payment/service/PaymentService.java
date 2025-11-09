@@ -83,8 +83,8 @@ public class PaymentService {
 
     private void validateStatusTransition(StatusPagamento currentStatus, StatusPagamento newStatus) {
         if (currentStatus == StatusPagamento.PENDENTE_PROCESSAMENTO) {
-            if (newStatus != StatusPagamento.PROCESSADO_SUCESSO && 
-                newStatus != StatusPagamento.PROCESSADO_FALHA) {
+            if (newStatus != StatusPagamento.PROCESSADO_SUCESSO &&
+                    newStatus != StatusPagamento.PROCESSADO_FALHA) {
                 throw new InvalidStatusTransitionException(
                         "Status PENDENTE_PROCESSAMENTO só pode ser alterado para PROCESSADO_SUCESSO ou PROCESSADO_FALHA");
             }
@@ -99,4 +99,3 @@ public class PaymentService {
         }
     }
 }
-
